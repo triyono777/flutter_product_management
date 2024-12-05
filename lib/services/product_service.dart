@@ -30,6 +30,7 @@ class ProductService {
     final index =
         _products.indexWhere((product) => product.id == updatedProduct.id);
     if (index != -1) {
+      // -1 menunjukkan bahwa produk tidak ditemukan
       _products[index] = updatedProduct;
     }
   }
