@@ -95,24 +95,22 @@ class _ProductPageState extends State<ProductPage> {
         itemCount: _productService.getAllProducts().length,
         itemBuilder: (context, index) {
           final product = _productService.getAllProducts()[index];
-          return Card(
-            child: ListTile(
-              title: Text(product.name),
-              subtitle: Text(
-                  '${product.description}\nHarga: Rp${product.price} | Stok: ${product.stock}'),
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.edit),
-                    onPressed: () => _showEditDialog(product),
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.delete),
-                    onPressed: () => _deleteProduct(product),
-                  ),
-                ],
-              ),
+          return ListTile(
+            title: Text(product.name),
+            subtitle: Text(
+                '${product.description}\nHarga: Rp${product.price} | Stok: ${product.stock}'),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.edit),
+                  onPressed: () => _showEditDialog(product),
+                ),
+                IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => _deleteProduct(product),
+                ),
+              ],
             ),
           );
         },
